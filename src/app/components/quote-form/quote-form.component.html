@@ -1,16 +1,28 @@
 <h3 class="text-center">Create a New Quote</h3>
-<form>
+<form #quoteForm="ngForm">
   <div class="form-group">
     <label>Quote</label>
-    <textarea class="form-control" required rows="4"></textarea>
+    <textarea [ngClass]="{'is-invalid': quote.errors && quote.touched}" [(ngModel)]="newQuote.quote" #quote="ngModel"
+      name="quote" class="form-control" required rows="4"></textarea>
+    <div class="invalid-feedback">
+      A quote is required!
+    </div>
   </div>
   <div class="form-group">
     <label>Author</label>
-    <input type="text" class="form-control" required>
+    <input [ngClass]="{'is-invalid': author.errors && author.touched}" [(ngModel)]="newQuote.author" #author="ngModel"
+      name="author" type="text" class="form-control" required>
+    <div class="invalid-feedback">
+      Author is required!
+    </div>
   </div>
   <div class="form-group">
     <label>Submitted By:</label>
-    <input type="text" class="form-control" required>
+    <input [ngClass]="{'is-invalid': subBy.errors && subBy.touched}" [(ngModel)]="newQuote.subBy" #subBy="ngModel" name="subBy"
+      type="text" class="form-control" required>
+    <div class="invalid-feedback">
+      Name is required!
+    </div>
   </div>
-  <input type="submit" value="Post Quote" class="btn btn-success">
+  <input [disabled]="!quoteForm.form.valid" type="submit" value="Post Quote" class="btn btn-success">
 </form>
