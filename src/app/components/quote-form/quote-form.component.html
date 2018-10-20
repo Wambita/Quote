@@ -1,5 +1,5 @@
 <h3 class="text-center">Create a New Quote</h3>
-<form #quoteForm="ngForm">
+<form #quoteForm="ngForm" (ngSubmit)="addNewQuote(quoteForm)">
   <div class="form-group">
     <label>Quote</label>
     <textarea [ngClass]="{'is-invalid': quote.errors && quote.touched}" [(ngModel)]="newQuote.quote" #quote="ngModel"
