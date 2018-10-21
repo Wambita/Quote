@@ -1,15 +1,14 @@
 export class Quote {
-  upvote: number;
-  downvote: number;
-  createdOn: Date;
+  highest: boolean;
   constructor(
     public id: number,
     public quote: string,
     public author: string,
-    public subBy: string
+    public subBy: string,
+    public upvote: number,
+    public downvote: number,
+    public createdOn: Date
   ) {
-    this.upvote = 0;
-    this.downvote = 0;
-    this.createdOn = new Date();
+    this.highest = false;
   }
 }
