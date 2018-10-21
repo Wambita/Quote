@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  Output,
-  EventEmitter,
-  ViewChild
-} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Quote } from '../../models/quote/quote';
 import { Quotes } from '../../models/quotes/quotes';
 
@@ -14,21 +8,19 @@ import { Quotes } from '../../models/quotes/quotes';
   styleUrls: ['./quote-form.component.css']
 })
 export class QuoteFormComponent implements OnInit {
-  @Output()
-  formQuote = new EventEmitter();
-
   @ViewChild('quoteForm')
   form: any;
 
-  newQuote = new Quote(0, '', '', '');
+  newQuote = new Quote(null, '', '', '', null, null, null);
   constructor() {}
 
   ngOnInit() {}
 
   addNewQuote({ value }) {
-    this.newQuote.id = Quote.length + 1;
-    this.newQuote.createdOn = new Date();
-    console.log(this.newQuote);
+    value.id = Quotes.length + 1;
+    value.createdOn = new Date();
+    value.upvote = 0;
+    value.downvote = 0;
     Quotes.unshift(value);
     this.form.reset();
   }
