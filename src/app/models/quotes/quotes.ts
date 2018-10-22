@@ -3,7 +3,7 @@ import { Quote } from '../quote/quote';
 export const Quotes: Quote[] = [
   new Quote(
     1,
-    'Very little is needed to make a happy life; it is all within yourself, in your way of thinking',
+    'Very little is needed to make a happy life; it is all within yourself, in your way of thinking.',
     'Marcus Aurelius',
     'Sam Kasyoki',
     12,
@@ -12,7 +12,7 @@ export const Quotes: Quote[] = [
   ),
   new Quote(
     2,
-    'Dost thou love life? Then do not squander time, for that is the stuff life is made of',
+    'Dost thou love life? Then do not squander time, for that is the stuff life is made of.',
     'Benjamin Franklin',
     'Sally Mbinya',
     10,
