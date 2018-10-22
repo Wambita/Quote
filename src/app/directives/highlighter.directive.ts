@@ -3,10 +3,7 @@ import {
   ElementRef,
   Input,
   Renderer2,
-  HostListener,
-  OnChanges,
-  OnInit,
-  SimpleChanges
+  OnChanges
 } from '@angular/core';
 
 @Directive({
@@ -18,7 +15,6 @@ export class HighlighterDirective implements OnChanges {
 
   constructor(private renderer: Renderer2, private elem: ElementRef) {}
 
-  @HostListener('change')
   ngOnChanges() {
     if (this.appHighlighter) {
       this.addClass('custom-badge', this.elem.nativeElement);
