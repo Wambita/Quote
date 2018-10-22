@@ -1,5 +1,5 @@
 export class Quote {
-  highest: boolean;
+  isHighest: boolean;
   constructor(
     public id: number,
     public quote: string,
@@ -9,6 +9,6 @@ export class Quote {
     public downvote: number,
     public createdOn: Date
   ) {
-    this.highest = false;
+    this.isHighest = false;
   }
 }
