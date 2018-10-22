@@ -1,13 +1,13 @@
-<app-quote-form *ngIf="showForm"></app-quote-form>
+<app-quote-form (formToggler)="toggleForm($event)" *ngIf="showForm"></app-quote-form>
 <button class="btn btn-secondary mt-5" (click)="showForm=!showForm">{{showForm ? "Close Form" : "New Quote"}}</button>
 <div class="row">
   <div *ngFor="let quote of quotes; let i = index" class="col-md-6">
     <div class="card card-body my-3 bg-purple">
-      <div [appHighlighter]="quote.highest" class="badge badge-secondary">Most Voted!</div>
+      <div [appHighlighter]="quote.isHighest" class="badge badge-secondary">Most Voted!</div>
       <blockquote class="blockquote text-center">
         <p class="mb-0">{{quote.quote}}</p>
         <footer class="blockquote-footer my-4 text-white">{{quote.author}}</footer>
-        <app-quote-details [quote]="quote" (vote)='voteAdd($event,i)'></app-quote-details>
+        <app-quote-details [quote]="quote" (vote)='addVote($event,i)'></app-quote-details>
         <button (click)="deleteQuote(i)" class="btn btn-light">Delete Quote</button>
       </blockquote>
     </div>
