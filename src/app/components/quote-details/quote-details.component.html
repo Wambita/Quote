@@ -1,3 +1,4 @@
-<p>
-  quote-details works!
-</p>
+<i class="fa fa-thumbs-up" (click)="voteAdd(true)">{{quote.upvote}}</i>
+&nbsp;
+<i class="fa fa-thumbs-down" (click)="voteAdd(false)">{{quote.downvote}}</i>
+<p class="mt-3">Posted by {{quote.subBy}}, {{quote.createdOn | timePassed}}</p>
